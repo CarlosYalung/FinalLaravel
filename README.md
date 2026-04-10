@@ -215,11 +215,11 @@ The API is now running at `http://localhost:8000`
 
 > **Base URL:** `http://localhost:8000/api`
 > **Auth:** All protected routes require `Authorization: Bearer {token}` header.
-> **� Postman Collection:** [Yalung Scholarship Management System final](https://www.postman.com/yalungcarlos17-6342291/yalung-carlos-s-workspace/documentation/52767019-817cb6bf-fe02-48ca-89de-8f60434506ad)
+> **📌 Postman Collection:** [Yalung Scholarship Management System final](https://www.postman.com/yalungcarlos17-6342291/yalung-carlos-s-workspace/documentation/52767019-817cb6bf-fe02-48ca-89de-8f60434506ad)
 
 ---
 
-### 🔐 Auth
+### � Auth
 
 | Method | Endpoint | Description | Auth |
 | :----- | :------- | :---------- | :--- |
@@ -228,63 +228,17 @@ The API is now running at `http://localhost:8000`
 | `GET`  | `/api/user` | Get logged in user | Required |
 | `POST` | `/api/logout` | Logout current session | Required |
 
-#### POST `/api/login`
-```json
-{
-  "email": "admin@gmail.com",
-  "password": "password"
-}
-```
-
-#### POST `/api/register`
-```json
-{
-  "name": "Juan Dela Cruz",
-  "email": "juan@yalung.edu",
-  "password": "password123",
-  "password_confirmation": "password123"
-}
-```
-
 ---
 
 ### 🎓 Students
 
-> `course_id`: 1=BS IT, 2=BS CS | `year_level_id`: 1=1st, 2=2nd, 3=3rd, 4=4th | `section_id`: 1=A, 2=B, 3=C, 4=D
-
 | Method | Endpoint | Description |
 | :----- | :------- | :---------- |
 | `GET`    | `/api/students` | Get all students |
-| `POST`   | `/api/students` | Create student |
+| `POST`   | `/api/students` | Create new student |
 | `GET`    | `/api/students/{id}` | Get student by ID |
 | `PUT`    | `/api/students/{id}` | Update student |
 | `DELETE` | `/api/students/{id}` | Delete student |
-
-#### POST `/api/students`
-```json
-{
-  "first_name": "Pedro",
-  "middle_name": "Cruz",
-  "last_name": "Santos",
-  "id_number": "2024-00001",
-  "course_id": 1,
-  "year_level_id": 2,
-  "section_id": 1
-}
-```
-
-#### PUT `/api/students/{id}`
-```json
-{
-  "first_name": "Pedro",
-  "middle_name": "Cruz",
-  "last_name": "Santos",
-  "id_number": "2024-00001",
-  "course_id": 2,
-  "year_level_id": 3,
-  "section_id": 2
-}
-```
 
 ---
 
@@ -293,36 +247,10 @@ The API is now running at `http://localhost:8000`
 | Method | Endpoint | Description |
 | :----- | :------- | :---------- |
 | `GET`    | `/api/scholarships` | Get all scholarships |
-| `POST`   | `/api/scholarships` | Create scholarship |
+| `POST`   | `/api/scholarships` | Create new scholarship |
 | `GET`    | `/api/scholarships/{id}` | Get scholarship by ID |
 | `PUT`    | `/api/scholarships/{id}` | Update scholarship |
 | `DELETE` | `/api/scholarships/{id}` | Delete scholarship |
-
-#### POST `/api/scholarships`
-```json
-{
-  "name": "CHED Scholarship",
-  "description": "Government scholarship for deserving students",
-  "provider": "CHED",
-  "slots": 10,
-  "amount": 5000.00,
-  "deadline": "2026-06-30",
-  "status": "active"
-}
-```
-
-#### PUT `/api/scholarships/{id}`
-```json
-{
-  "name": "CHED Scholarship",
-  "description": "Updated description",
-  "provider": "CHED",
-  "slots": 15,
-  "amount": 6000.00,
-  "deadline": "2026-07-31",
-  "status": "active"
-}
-```
 
 ---
 
@@ -331,29 +259,10 @@ The API is now running at `http://localhost:8000`
 | Method | Endpoint | Description |
 | :----- | :------- | :---------- |
 | `GET`    | `/api/requirements` | Get all requirements |
-| `POST`   | `/api/requirements` | Create requirement |
+| `POST`   | `/api/requirements` | Create new requirement |
 | `GET`    | `/api/requirements/{id}` | Get requirement by ID |
 | `PUT`    | `/api/requirements/{id}` | Update requirement |
 | `DELETE` | `/api/requirements/{id}` | Delete requirement |
-
-#### POST `/api/requirements`
-```json
-{
-  "scholarship_id": 1,
-  "name": "Certificate of Registration",
-  "description": "Official COR from the registrar",
-  "is_mandatory": true
-}
-```
-
-#### PUT `/api/requirements/{id}`
-```json
-{
-  "name": "Certificate of Registration",
-  "description": "Updated description",
-  "is_mandatory": false
-}
-```
 
 ---
 
@@ -362,38 +271,10 @@ The API is now running at `http://localhost:8000`
 | Method | Endpoint | Description |
 | :----- | :------- | :---------- |
 | `GET`    | `/api/applicants` | Get all applicants |
-| `POST`   | `/api/applicants` | Create applicant |
+| `POST`   | `/api/applicants` | Create new applicant |
 | `GET`    | `/api/applicants/{id}` | Get applicant by ID |
 | `PUT`    | `/api/applicants/{id}` | Update applicant |
 | `DELETE` | `/api/applicants/{id}` | Delete applicant |
-
-#### POST `/api/applicants`
-```json
-{
-  "first_name": "Maria",
-  "last_name": "Santos",
-  "email": "maria@yalung.edu",
-  "phone": "09123456789",
-  "address": "Cebu City",
-  "course": "BS IT",
-  "year_level": "2nd Year",
-  "status": "pending"
-}
-```
-
-#### PUT `/api/applicants/{id}`
-```json
-{
-  "first_name": "Maria",
-  "last_name": "Santos",
-  "email": "maria@yalung.edu",
-  "phone": "09123456789",
-  "address": "Mandaue City",
-  "course": "BS IT",
-  "year_level": "3rd Year",
-  "status": "approved"
-}
-```
 
 ---
 
@@ -402,60 +283,22 @@ The API is now running at `http://localhost:8000`
 | Method | Endpoint | Description |
 | :----- | :------- | :---------- |
 | `GET`    | `/api/applications` | Get all applications |
-| `POST`   | `/api/applications` | Submit application |
+| `POST`   | `/api/applications` | Submit new application |
 | `GET`    | `/api/applications/{id}` | Get application by ID |
-| `PUT`    | `/api/applications/{id}` | Update application |
+| `PUT`    | `/api/applications/{id}` | Update application status |
 | `DELETE` | `/api/applications/{id}` | Delete application |
-
-#### POST `/api/applications`
-```json
-{
-  "applicant_id": 1,
-  "scholarship_id": 1,
-  "status": "pending",
-  "application_date": "2026-04-10",
-  "remarks": null
-}
-```
-
-#### PUT `/api/applications/{id}`
-```json
-{
-  "status": "approved",
-  "remarks": "All requirements submitted and verified"
-}
-```
 
 ---
 
 ### 📁 Documents
 
-> Upload uses `form-data`. Accepted file types: `pdf`, `jpg`, `jpeg`, `png` (max 5MB).
-
 | Method | Endpoint | Description |
 | :----- | :------- | :---------- |
 | `GET`    | `/api/documents` | Get all documents |
-| `POST`   | `/api/documents` | Upload document |
+| `POST`   | `/api/documents` | Upload document (form-data) |
 | `GET`    | `/api/documents/{id}` | Get document by ID |
 | `PUT`    | `/api/documents/{id}` | Update document |
 | `DELETE` | `/api/documents/{id}` | Delete document |
-
-#### POST `/api/documents` — form-data
-| Key | Type | Value |
-| :-- | :--- | :---- |
-| `applicant_id` | text | `1` |
-| `application_id` | text | `1` |
-| `document_type` | text | `Certificate of Registration` |
-| `file` | file | `cor.pdf` |
-| `status` | text | `pending` |
-
-#### PUT `/api/documents/{id}` — form-data
-| Key | Type | Value |
-| :-- | :--- | :---- |
-| `document_type` | text | `Certificate of Registration` |
-| `status` | text | `verified` |
-| `application_id` | text | `1` |
-| `file` | file | *(optional — only if replacing file)* |
 
 ---
 
@@ -464,34 +307,10 @@ The API is now running at `http://localhost:8000`
 | Method | Endpoint | Description |
 | :----- | :------- | :---------- |
 | `GET`    | `/api/users` | Get all users |
-| `POST`   | `/api/users` | Create user |
+| `POST`   | `/api/users` | Create new user |
 | `GET`    | `/api/users/{id}` | Get user by ID |
 | `PUT`    | `/api/users/{id}` | Update user |
 | `DELETE` | `/api/users/{id}` | Delete user |
-
-#### POST `/api/users`
-```json
-{
-  "first_name": "Admin",
-  "middle_name": null,
-  "last_name": "User",
-  "email": "admin@yalung.edu",
-  "password": "password123",
-  "role_id": 1,
-  "user_status_id": 1
-}
-```
-
-#### PUT `/api/users/{id}`
-```json
-{
-  "first_name": "Admin",
-  "last_name": "User",
-  "email": "admin@yalung.edu",
-  "role_id": 1,
-  "user_status_id": 1
-}
-```
 
 ---
 
